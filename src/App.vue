@@ -7,7 +7,7 @@
 
 <script>
 import NavbarComponents from './components/NavBar.vue';
-import PoemaFormComponent from '.components/poema/PoemaForm.vue';
+import PoemaFormComponent from './components/poema/PoemaForm.vue';
 
 export default {
   name: 'App',

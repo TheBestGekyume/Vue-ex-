@@ -6,7 +6,7 @@ export default class Poema {
         this.image = "", //link src
         this.date = "",
         this.textp = ""
-    };
+    }
 
     //CRUD (Create, Read, Update, Delete)
 
@@ -17,7 +17,7 @@ export default class Poema {
             var basePoema = JSON.parse(localStorage.getItem('poemas'));//JSON convertido em objeto para ser manipulado no html
             if(basePoema == null) {
                 basePoema = []  //Criando Vetor para receber os dados do localstorage 
-            };
+            }
             this.id = Date.now(); //criando id baseado no tempo
             basePoema.push(this); //Adicionando o poema na lista de poemas
 
@@ -27,7 +27,7 @@ export default class Poema {
             console.error(ex);
             throw ex;
         }
-    };
+    }
 
     
 
@@ -36,9 +36,9 @@ export default class Poema {
         var basePoema = JSON.parse(localStorage.getItem('poemas'));//JSON convertido em objeto para ser manipulado no HTML ou JS
             if(basePoema == null){
                 basePoema = [] //Criando Vetor para receber os dados do localstorage 
-            };
+            }
         return basePoema;
-    };
+    }
 
     //ATUALIZAR POEMAS
     update() {
@@ -49,14 +49,14 @@ export default class Poema {
                 if (poemas[i].id == this.id) {
                     poemas[i] = this
                 }
-            };
+            }
             var poemasJson = JSON.stringify(poemas); //Criando JSON dos objetos na basePoema para ser armazenado no localstorage
             localStorage.setItem('poemas', poemasJson); //poemasJson foi escrito no localStorage
         }catch (ex) {
             console.error(ex);
             throw ex;
         }
-    };
+    }
 
     //REMOVER POEMAS
     delete(index) {
@@ -88,5 +88,5 @@ export default class Poema {
             throw erros;
             
         }
-    };
+    }
 }
